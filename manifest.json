@@ -1,0 +1,63 @@
+{
+    "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcBHwzDvyBQ6bDppkIs9MP4ksKqCMyXQ/A52JivHZKh4YO/9vJsT3oaYhSpDCE9RPocOEQvwsHsFReW2nUEc6OLLyoCFFxIb7KkLGsmfakkut/fFdNJYh0xOTbSN8YvLWcqph09XAY2Y/f0AL7vfO1cuCqtkMt8hFrBGWxDdf9CQIDAQAB",
+    "update_url": "http://www.zchanger.com/update.xml",
+    "author": "ZChanger",
+    "name"              : "ZAutomation",
+    "short_name": "ZChanger Proxy for Google Chrome",
+    "version": "1.0",
+    "default_locale": "en",
+    "content_security_policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' https:\/\/online.browser-status.com https:\/\/s3.amazonaws.com; object-src 'self'",
+    "description": "ZProfiler Proxy",
+    "homepage_url": "https:\/\/www.zchanger.com",
+    "manifest_version": 2,
+    "web_accessible_resources": [
+        "images/*",
+        "src/*"
+    ],
+    "background": {
+        "persistent": true,
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "browser_action"    : {
+        "default_icon": { "19": "images/icon19.png", "38": "images/icon38.png" },
+        "default_title": "ZAutomation - run automation on web"
+    },
+    "content_scripts"   : [
+        {
+            "matches": ["<all_urls>"],
+            "exclude_globs": [],
+            "js"    : ["script.js"],
+            "run_at": "document_start",
+            "all_frames": false,
+            "match_about_blank": true
+        }
+    ],
+
+    "permissions": [
+        "tabs",
+        "storage",
+        "unlimitedStorage",
+        "history",
+        "browsingData",
+        "topSites",
+        "nativeMessaging",
+        "*:\/\/*\/*",
+        "http:\/\/*\/*",
+        "https:\/\/*\/*",
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>",
+        "webNavigation",
+        "contextMenus",
+        "activeTab",
+        "privacy",
+        "cookies",
+        "notifications",
+        "management",
+        "proxy",
+        "downloads"
+    ]
+}
+
